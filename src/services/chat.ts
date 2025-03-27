@@ -17,12 +17,15 @@ export class ChatService {
   private chatHistory: ChatMessage[] = [];
 
   constructor() { }
+
   /**
    * Initialize the browser
    * @returns {Promise<void>} - Returns a promise that resolves when the browser is initialized
    */
   private async initializeBrowser(): Promise<void> {
     if (!this.browser) {
+      // connect to the browser 
+      // Copied from internet
       const { browser, page } = await connect({
         headless: false,
         args: [
@@ -211,6 +214,7 @@ export class ChatService {
       }
 
       // Create CSV content
+      // Copied from internet
       const csvContent = [
         ['Role', 'Message', 'Timestamp'],
         ...this.chatHistory.map(msg => [
