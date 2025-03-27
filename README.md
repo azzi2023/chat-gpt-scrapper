@@ -22,7 +22,7 @@ A web interface for interacting with ChatGPT using Express, TypeScript, and Pupp
 2. Clone the repository:
    ```bash
    git clone <repository-url>
-   cd chat-gpt2.0
+   cd chat-gpt-scrapper
    ```
 
 3. Install dependencies:
@@ -73,15 +73,20 @@ npm start
 ## Project Structure
 
 ```
-chat-gpt2.0/
+chat-gpt-scrapper/
 ├── src/
+│   ├── controllers/
 │   ├── routes/
 │   │   └── chat.ts
+│   │   └── login.ts
+│   │   └── view.ts
+│   │   └── index.ts
 │   ├── services/
 │   │   └── chat.ts
+│   ├── views/
+│   │   └── chat.ts
+│   │   └── login.ts
 │   └── app.ts
-├── views/
-│   └── chat.ejs
 ├── public/
 ├── exports/
 ├── dist/           # Compiled JavaScript files

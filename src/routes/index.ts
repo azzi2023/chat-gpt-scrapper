@@ -1,18 +1,12 @@
 const express = require('express');
-import { Request, Response } from 'express';
 import chatRoutes from './chat';
 import authRoutes from './auth';
+import viewRoutes from './view';
 
 const router = express.Router();
 
-// Page routes
-router.get('/', (req: Request, res: Response) => {
-  res.render('login');
-});
-
-router.get('/chat', (req: Request, res: Response) => {
-  res.render('chat');
-});
+// Use view routes
+router.use('/', viewRoutes);
 
 // API routes
 router.use('/chat', chatRoutes);
